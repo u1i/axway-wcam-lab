@@ -13,6 +13,10 @@ In this lab participants will use Axway's API Builder to:
 * Deploy the Image
 * Consume the API using Swagger Editor
 
+This covers the first steps in an API Lifecycle where participants are looking at **Design** -> **Build** -> **Deploy** of an API endpoint from a hands-on perspective. A plausible next step would be adding access control, governance & service catalog with an API Management solution including an API Portal.
+
+### Technical Environment
+
 API Builder is a development tool that usually runs on a developer's machine directly, such as Windows laptop, a MacBook or a Linux desktop. For this lab we're using a server side setup so participants can perform all steps with just a browser connection. This is useful for environments with network restrictions, or where for any reason participant can't install the necessary requirements such as NodeJS on their machines.
 
 ## Step 1: Get Access to an Instance
@@ -44,7 +48,7 @@ Now open a new browser tab. Copy the IP address or hostname of your lab instance
 
 ![](./resources/lab06.png)
 
-## Step 3: Create a Data Model
+## Step 3: Create a Data Model & API
 
 ![](./resources/lab07.png)
 
@@ -58,6 +62,8 @@ Now open a new browser tab. Copy the IP address or hostname of your lab instance
 
 ![](./resources/lab12.png)
 
+## Step 4: Review & Test the API
+
 ![](./resources/lab13.png)
 
 ![](./resources/lab14.png)
@@ -66,6 +72,16 @@ Now open a new browser tab. Copy the IP address or hostname of your lab instance
 
 ![](./resources/lab16.png)
 
+## Step 5: Open API Documentation in Swagger Editor
+
 ![](./resources/lab17.png)
 
 ![](./resources/lab18.png)
+
+![](./resources/lab22.png)
+
+## Step 6: Build & Deploy Docker Image
+
+![](./resources/lab19.png)
+
+![](./resources/lab21.png)
