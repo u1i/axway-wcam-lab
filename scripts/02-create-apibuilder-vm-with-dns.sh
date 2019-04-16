@@ -48,3 +48,4 @@ curl -X PATCH \
 echo "Instance: $instance"
 echo "Public IP: $public_ip"
 echo "DNS: ${hostname}".xwaay.net
+echo "WebSSH: http://axway:Axway123@${hostname}.xwaay.net:8022/ssh/host/${hostname}.xwaay.net"
