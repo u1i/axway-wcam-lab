@@ -110,7 +110,7 @@ You can experiment with the endpoints using the sandbox interface. Click on 'Gen
 
 ## Step 6: Build & Deploy Docker Image
 
-If you've looked around a bit in the Linux environment of your lab environment you might have noticed that there's a Dockerfile! You can use it 
+If you've looked around a bit in the Linux environment of your lab environment you might have noticed that there's a Dockerfile! You can use it to create a deployable 'microservice' of the API you just built.
 
 If API Builder is still running, press Ctrl+C to stop it. The following command 'bakes' a self-contained docker image with your data model, the API endpoints and all necessary libraries in it:
 
