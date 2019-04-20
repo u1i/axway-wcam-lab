@@ -21,11 +21,15 @@ API Builder is a development tool that usually runs on a developer's machine dir
 
 ## Step 1: Get Access to an Instance
 
-Use [this form](https://forms.gle/ZG9qohvq3TDf5wccA) to provide your email address in order to get access:
+Login to [https://labs.xwaay.net](https://labs.xwaay.net) using the PIN provided by your instructor:
 
-![](./resources/lab01.png)
+![](./resources/lab00.png)
 
-The instructor will send you the details on how to access your lab instance. Click on the link provided or copy/paste the link in your prefered web browser. You should now have terminal access.
+You should now have a session with a dedicated lab instance and all the info to get you started.
+
+![](./resources/lab00x.png)
+
+Click on 'Start Session here' to get access through a web based terminal:
 
 ![](./resources/lab03.png)
 
