@@ -20,6 +20,13 @@ sec=sg-1a2ee67f
 tmpfile=/tmp/awsrun.tmp.$$
 
 aws ec2 run-instances --image-id $ami --count 1 --instance-type $itype --key-name $sshkey --security-group-ids $sec --subnet-id $subnet --associate-public-ip-address --tag-specifications 'ResourceType=instance,Tags=[{Key=apibuilder,Value=test}]' > $tmpfile
+
+if [ "$?" != "0" ]
+then
+	echo "error during provisioning. Limit exceeded?"
+	exit 1
+fi
+
 sleep 3
 instance=$(cat $tmpfile | jq ".Instances[0].InstanceId" | tr -d '"')
 public_ip=$(aws ec2 describe-instances --instance $instance | jq ".Reservations[].Instances[0].PublicIpAddress" | tr -d '"')
@@ -45,7 +52,6 @@ curl -X PATCH \
   }
 ]'
 
-sleep 10
 source b9y.conf
 
 # Get b9y token
@@ -59,7 +65,6 @@ token=$(curl -s -X POST \
   "password": "'''$b9y_password'''"
 }')
 
-echo $token
 
 curl -X POST \
   $b9y_host/lists/stuff \
