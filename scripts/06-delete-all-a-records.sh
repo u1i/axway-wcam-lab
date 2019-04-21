@@ -1,5 +1,14 @@
 apikey=$(cat apikey.conf | tr -d "\n")
 
+echo -n "Are you sure (y)? "
+read answer
+
+if [ "$answer" != "y" ]
+then
+	echo Aborting...
+	exit 1
+fi
+
 # Reset A records
 
 curl -s -X PUT \
