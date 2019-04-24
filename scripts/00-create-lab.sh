@@ -23,8 +23,9 @@ token=$(curl -s -X POST \
 
 echo $token
 
-curl -X PUT \
+echo '{"info": "'''$labinfo'''"}' | curl -X PUT \
   $b9y_host/keys/lab:$labid \
   -H 'Accept: application/json' \
   -H "Authorization: Bearer $token" \
-  -d '{"info": "'''$labinfo'''"}'
+  -d @-
+  #-d '{"info": "'''$labinfo'''"}'
