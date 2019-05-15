@@ -1,0 +1,17 @@
+# Singapore
+region=eu-central-1
+
+# API Builder on Ubuntu 16.04 LTS
+ami=ami-0fe7da6f8e981
+
+# Subnet
+subnet=subnet-09084121
+
+# Instance Type
+itype=t2.micro
+
+# SSH Key
+sshkey=uh-fra-2019
+
+# Security Group
+sec=sg-0773ea2a38953b9ed

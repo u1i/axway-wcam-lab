@@ -3,10 +3,10 @@
 
 # expects a file apikey.conf with GoDaddy API Key, content "key:secret"
 # API Builder on Ubuntu 16.04 LTS
-ami=ami-0fb1fcdc19ce3261c
-
+ami=ami-0fe7da64de0997a29
+region=eu-central-1
 # Subnet
-subnet=subnet-8c9e55e9
+subnet=subnet-743ed01d
 
 # Instance Type
 itype=t2.micro
@@ -15,11 +15,11 @@ itype=t2.micro
 sshkey=uh-2017-06
 
 # Security Group
-sec=sg-1a2ee67f
+sec=launch-wizard-2
 
 tmpfile=/tmp/awsrun.tmp.$$
 
-aws ec2 run-instances --image-id $ami --count 1 --instance-type $itype --key-name $sshkey --security-group-ids $sec --subnet-id $subnet --associate-public-ip-address --tag-specifications 'ResourceType=instance,Tags=[{Key=apibuilder,Value=test}]' > $tmpfile
+aws ec2 run-instances --region=$region --image-id $ami --count 1 --instance-type $itype --key-name $sshkey --security-group-ids $sec --subnet-id $subnet --associate-public-ip-address --tag-specifications 'ResourceType=instance,Tags=[{Key=apibuilder,Value=test}]' > $tmpfile
 
 if [ "$?" != "0" ]
 then
