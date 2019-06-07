@@ -62,7 +62,7 @@ def do_logout():
 @view('admin')
 def adm(id):
 
-    b9y = B9y('http://b9y.redis.sg:8050', 'admin', 'alien4')
+    b9y = B9y('http://b9y.redis.sg:8050', 'admin', 'XXXXX')
     sessions = b9y.keys("lab:" + str(id) + ":")
     s2={}
 
