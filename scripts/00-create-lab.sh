@@ -8,6 +8,13 @@ fi
 labid=$1
 labinfo=$2
 
+re='^[0-9]+$'
+if ! [[ $labid =~ $re ]] || [ "$(expr length $labid)" != "4" ]
+then
+	echo "New PIN must be a 4 digit number"
+	exit 1
+fi
+
 source b9y.conf
 
 # Get b9y token
