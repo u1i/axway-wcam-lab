@@ -2,8 +2,10 @@
 
 tmpfile=/tmp/awsrun.tmp.$$
 
+# Load AWS configuration
 source aws.conf
 
+# We need a PIN as a parameter, e.g. 1234
 if [ "$#" != "1" ]
 then
         echo Usage: $0 lab_id
@@ -13,6 +15,15 @@ fi
 
 lab_id=$1
 
+# The new PIN needs to be a 4 digit number
+re='^[0-9]+$'
+if ! [[ $lab_id =~ $re ]] || [ "$(expr length $lab_id)" != "4" ]
+then
+	echo "Invalid PIN. Choose a 4 digit number"
+	exit 1
+fi
+
+# Create instance
 aws ec2 run-instances --region=$region --image-id $ami --count 1 --instance-type $itype --key-name $sshkey --security-group-ids $sec --subnet-id $subnet --associate-public-ip-address --tag-specifications 'ResourceType=instance,Tags=[{Key=apibuilder,Value=test}]' > $tmpfile
 
 if [ "$?" != "0" ]
