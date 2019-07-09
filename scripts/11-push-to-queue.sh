@@ -1,11 +1,14 @@
 source b9y.conf
 
-if [ "$#" != "1" ]
+if [ "$#" != "2" ]
 then
-	echo Usage: $0 data
-	echo Example: $0 \"hello world\"
+	echo Usage: $0 lab_id data
+	echo Example: $0 3721 \"hello world\"
 	exit 1
 fi
+
+lab_id=$1
+
 # Get b9y token
 
 token=$(curl -s -X POST \
@@ -18,4 +21,4 @@ token=$(curl -s -X POST \
 }')
 
 
-curl -X POST -d "$1" $b9y_host/lists/stuff -H "Authorization: Bearer $token" 
+curl -X POST -d "$1" $b9y_host/lists/q_$lab_id -H "Authorization: Bearer $token" 
