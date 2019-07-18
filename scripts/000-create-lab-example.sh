@@ -1,1 +1,1 @@
-./00-create-lab.sh 8888 "<a href='http://www.axway.com'>Session Instructions</a>"
+./00-create-lab.sh 2841 "<a href='https://github.com/u1i/axway-wcam-lab' target='_lab'>Virtual Usergroup Exercise</a>"

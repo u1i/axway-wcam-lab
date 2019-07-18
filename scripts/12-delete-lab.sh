@@ -22,6 +22,18 @@ token=$(curl -s -X POST \
 
 echo $token
 
+echo Deleting lab $labid
+# Delete Lab
 curl -X DELETE $b9y_host/keys/lab:$labid \
   -H 'Accept: application/json' \
   -H "Authorization: Bearer $token" 
+
+# Find all Sessions and delete those
+sessions=$(curl -s $b9y_host/keys -H 'Accept: application/json' -H "Authorization: Bearer $token" | grep "session:$labid" | tr '"' "\n" | grep "session:$labid")
+
+for s in $sessions
+do
+	echo Deleting session $s
+
+	curl -X DELETE $b9y_host/keys/$s -H 'Accept: application/json' -H "Authorization: Bearer $token" 
+done
