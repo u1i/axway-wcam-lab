@@ -112,6 +112,8 @@ You can experiment with the endpoints using the sandbox interface. Click on 'Gen
 
 ![](./resources/lab22.png)
 
+**Note**: If you're running API Builder on your local machine you will want to use [ngrok](https://ngrok.com), [serveo](http://serveo.net/), [portmap.io](https://portmap.io) or [pagekite](http://pagekite.net/) to make it available on a public IP address.
+
 ## Step 6: Build & Deploy Docker Image
 
 If you've looked around a bit in the Linux environment of your lab environment you might have noticed that there's a Dockerfile! You can use it to create a deployable 'microservice' of the API you just built.
