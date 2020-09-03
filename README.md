@@ -13,6 +13,9 @@ In this lab participants will use Axway's API Builder to:
 * Deploy the Image
 * Consume the API using Swagger Editor
 
+![](./resources/overview1.png)
+
+
 This covers the first steps in an API Lifecycle where participants are looking at **Design** -> **Build** -> **Deploy** of an API endpoint from a hands-on perspective. A plausible next step would be adding access control, governance & service catalog with an API Management solution including an API Portal.
 
 ### Technical Environment
